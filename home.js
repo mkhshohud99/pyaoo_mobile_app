@@ -79,7 +79,7 @@ document.getElementById("cash-out-btn").addEventListener("click", function(e){
     e.preventDefault()
     const agentNumber = document.getElementById("agent-number").value
     cashOutAmount = getInputValueNumber("cash-out-amount")
-    const pin = getInputValueNumber("pin")
+    const pin = getInputValueNumber("cash-out-pin")
 
     const balance = getInnerText("available-balance")
     const newBalance = balance - cashOutAmount
@@ -102,6 +102,88 @@ document.getElementById("cash-out-btn").addEventListener("click", function(e){
 
     transactionData.push(data)
 
+})
+
+// Transfer Feature
+document.getElementById("confirm-transfer-btn").addEventListener("click", function(e){
+    e.preventDefault()
+    const userNumber = document.getElementById("user-number").value
+    transferAmount = getInputValueNumber("transfer-amount")
+    const pin = getInputValueNumber("transfer-pin")
+
+    const balance = getInnerText("available-balance")
+    const newBalance = balance - transferAmount
+    setInnerText(newBalance)
+     if (userNumber.length < 11) {
+        alert("Invalid Agent Number")
+        return;
+    }
+    if(transferAmount <=0 || transferAmount>balance){
+        alert("Inefficient Amount")
+    }
+    if (pin != validPin) {
+        alert("Invalid PIN Number")
+        return;
+    }
+     const data = {
+        name: "Transfer",
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data)
+
+})
+
+//Get Bonus Feature
+
+document.getElementById("bonus-btn").addEventListener("click", function(e){
+    e.preventDefault()
+    const couponNumber = getInputValueNumber("coupon-number")
+    const balance = getInnerText("available-balance")
+    const newBalance = balance + couponNumber
+    setInnerText(newBalance)
+    const data = {
+        name: "Bonus",
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data)
+
+})
+
+//Pay Bill Feature 
+
+document.getElementById("pay-bill-btn").addEventListener("click", function (e) {
+    e.preventDefault()
+    
+    const serviceName = getInputValue("service")
+    const accountNumber = getInputValue("provider-account-number")
+    const amount = getInputValueNumber("pay-bill-amount")
+    const pin = getInputValueNumber("pay-bill-pin")
+    if(amount <= 0){
+        alert("Add Amount Must be Bigger then 0")
+        return;
+    }
+    if (accountNumber.length < 11) {
+        alert("Please Provide a valid account Number")
+        return;
+    }
+
+    if (pin != validPin) {
+        alert("Invalid PIN Number")
+        return;
+    }
+
+    const balance = getInnerText("available-balance")
+    const newBalance = balance - amount
+    setInnerText(newBalance)
+
+    const data = {
+        name: "Pay Bill",
+        date: new Date().toLocaleTimeString()
+    }
+
+    transactionData.push(data)
 })
 
 document.getElementById("transaction-btn").addEventListener("click", function(){

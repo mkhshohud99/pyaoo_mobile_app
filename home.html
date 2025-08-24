@@ -64,10 +64,20 @@
     </div>
     <!-- All Section -->
     <div class="max-w-lg mx-auto mt-5 font-semibold ">
+        <div class="form" id="default-parents" style="display: block;">
+            <!-- <div class="flex justify-between items-center">
+                <h1 class="text-2xl p-3">Transaction</h1>
+                <p class="text-[#08080880]">View All</p>
+            </div>
+            <div id="transaction-conatainer">
+
+            </div> -->
+            <img class="object-cover w-full" src="./assets/Group.png" alt="" srcset="">
+        </div>
         <!-- Add Money Section -->
-        <div class="form" id="add-money-parents">
+        <div class="form" id="add-money-parents" style="display: none;">
             <h1 class="text-2xl p-3">Add Money</h1>
-            <form class="bg-white rounded-2xl p-10  ">
+            <form class="bg-white rounded-2xl p-10" >
                 <div>
                     <label for="">Select A Bank</label><br />
                     <select class="rounded-3xl bg-[#f4f5f7] mt-3 w-full min-h-[40px]" id="bank">
@@ -112,24 +122,78 @@
                 </div>
                 <div class="mt-5">
                     <label for="">PIN Number:</label><br />
-                    <input type="text" placeholder="Enter your pin Number" id="pin"
+                    <input type="text" placeholder="Enter your pin Number" id="cash-out-pin"
                         class="input rounded-3xl w-full bg-[#f4f5f7] mt-3" />
                 </div>
-                <button class="btn bg-[#0874f2] text-white w-full mt-5 rounded-3xl" id="cash-out-btn">Add
-                    Money</button>
+                <button class="btn bg-[#0874f2] text-white w-full mt-5 rounded-3xl" id="cash-out-btn">Cash Out</button>
             </form>
         </div>
         <!-- Transfer Money -->
         <div class="form" id="tranfer-money-parents" style="display: none;">
             <h1 class="text-2xl p-3">Transfer Money</h1>
+            <form class="bg-white rounded-2xl p-10  ">
+                <div class="mt-5">
+                    <label for="">User Account Number:</label><br />
+                    <input type="text" placeholder="Enter Agent's 11 Digit Number" id="user-number"
+                        class="input rounded-3xl w-full bg-[#f4f5f7] mt-3" />
+                </div>
+                <div class="mt-5">
+                    <label for="">Transfer Amount:</label><br />
+                    <input type="text" placeholder="Enter your cash Out Amount" id="transfer-amount"
+                        class="input rounded-3xl w-full bg-[#f4f5f7] mt-3" />
+                </div>
+                <div class="mt-5">
+                    <label for="">PIN Number:</label><br />
+                    <input type="text" placeholder="Enter your pin Number" id="transfer-pin"
+                        class="input rounded-3xl w-full bg-[#f4f5f7] mt-3" />
+                </div>
+                <button class="btn bg-[#0874f2] text-white w-full mt-5 rounded-3xl" id="confirm-transfer-btn">Balance
+                    Transfer</button>
+            </form>
         </div>
         <!-- get Bonus -->
         <div class="form" id="get-bonus-parents" style="display: none;">
             <h1 class="text-2xl p-3">Get Bonus</h1>
+            <form class="bg-white rounded-2xl p-10  ">
+                <div class="mt-5">
+                    <label for="">Coupon Number:</label><br />
+                    <input type="text" placeholder="Enter the Coupon Number" id="coupon-number"
+                        class="input rounded-3xl w-full bg-[#f4f5f7] mt-3" />
+                </div>
+                <button class="btn bg-[#0874f2] text-white w-full mt-5 rounded-3xl" id="bonus-btn">Get Bonus</button>
+            </form>
         </div>
         <!-- Pay Bill -->
         <div class="form" id="pay-bill-parents" style="display: none;">
             <h1 class="text-2xl p-3">Pay Bill</h1>
+            <form class="bg-white rounded-2xl p-10  ">
+                <div>
+                    <label for="">Pay Bill for</label><br />
+                    <select class="rounded-3xl bg-[#f4f5f7] mt-3 w-full min-h-[40px]" id="service">
+                        <option>Select A Service</option>
+                        <option>Electricity</option>
+                        <option>Wi-Fi</option>
+                        <option>Gas</option>
+                    </select>
+                </div>
+                <div class="mt-5">
+                    <label for="">Service Provider Account Number:</label><br />
+                    <input type="text" placeholder="Enter Service provider Account Number" id="provider-account-number"
+                        class="input rounded-3xl w-full bg-[#f4f5f7] mt-3" />
+                </div>
+                <div class="mt-5">
+                    <label for="">Amount to Pay:</label><br />
+                    <input type="text" placeholder="Enter your Amount" id="pay-bill-amount"
+                        class="input rounded-3xl w-full bg-[#f4f5f7] mt-3" />
+                </div>
+                <div class="mt-5">
+                    <label for="">PIN Number:</label><br />
+                    <input type="text" placeholder="Enter your pin Number" id="pay-bill-pin"
+                        class="input rounded-3xl w-full bg-[#f4f5f7] mt-3" />
+                </div>
+                <button class="btn bg-[#0874f2] text-white w-full mt-5 rounded-3xl" id="pay-bill-btn">Add
+                    Money</button>
+            </form>
         </div>
         <!-- Transaction -->
         <div class="form" id="transaction-parents" style="display: none;">
